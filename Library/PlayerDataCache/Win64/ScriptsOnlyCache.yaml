@@ -2,8 +2,12 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Configuration
+    - Simulation
+    - Target
+    - cannonPos
     - code
     - mainMenu
+    - target3D
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro:
@@ -82,20 +86,26 @@ ScriptsOnlyBuild:
     fullTypeName: mainMenu
     methodName: GoToScene
   - assembly: Assembly-CSharp
-    fullTypeName: Configuration
+    fullTypeName: Target
     methodName: flip
   - assembly: Assembly-CSharp
     fullTypeName: Configuration
-    methodName: GoToScene
+    methodName: GoTo3DScene
   - assembly: Assembly-CSharp
     fullTypeName: Configuration
+    methodName: GoToScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Target
     methodName: leftRotate
   - assembly: Assembly-CSharp
     fullTypeName: Configuration
+    methodName: apply
+  - assembly: Assembly-CSharp
+    fullTypeName: Target
     methodName: rightRotate
   - assembly: Assembly-CSharp
     fullTypeName: Configuration
-    methodName: GoToScene
+    methodName: reset
   sceneClasses:
     Assets/Scenes/Configuration.unity:
     - Class: 1
@@ -139,26 +149,30 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2316}
     - Class: 114
-      Script: {instanceID: 2610}
+      Script: {instanceID: 2388}
     - Class: 114
-      Script: {instanceID: 2814}
+      Script: {instanceID: 2616}
     - Class: 114
-      Script: {instanceID: 4076}
+      Script: {instanceID: 2820}
     - Class: 114
-      Script: {instanceID: 4866}
+      Script: {instanceID: 4084}
     - Class: 114
-      Script: {instanceID: 4926}
+      Script: {instanceID: 4876}
     - Class: 114
-      Script: {instanceID: 5046}
+      Script: {instanceID: 4936}
     - Class: 114
-      Script: {instanceID: 5294}
+      Script: {instanceID: 5056}
     - Class: 114
-      Script: {instanceID: 5746}
+      Script: {instanceID: 5304}
     - Class: 114
-      Script: {instanceID: 6062}
+      Script: {instanceID: 5756}
+    - Class: 114
+      Script: {instanceID: 6072}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -191,6 +205,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 81
@@ -202,9 +218,15 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2610}
+      Script: {instanceID: 2478}
     - Class: 114
-      Script: {instanceID: 3182}
+      Script: {instanceID: 2616}
+    - Class: 114
+      Script: {instanceID: 2852}
+    - Class: 114
+      Script: {instanceID: 3190}
+    - Class: 114
+      Script: {instanceID: 4634}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
@@ -214,8 +236,6 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
-      Script: {instanceID: 0}
-    - Class: 1818360608
       Script: {instanceID: 0}
     Assets/Scenes/mainMenu.unity:
     - Class: 1
@@ -249,23 +269,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2188}
     - Class: 114
-      Script: {instanceID: 2610}
+      Script: {instanceID: 2616}
     - Class: 114
-      Script: {instanceID: 2814}
+      Script: {instanceID: 2820}
     - Class: 114
-      Script: {instanceID: 3982}
+      Script: {instanceID: 3990}
     - Class: 114
-      Script: {instanceID: 4090}
+      Script: {instanceID: 4098}
     - Class: 114
-      Script: {instanceID: 4342}
+      Script: {instanceID: 4350}
     - Class: 114
-      Script: {instanceID: 5046}
+      Script: {instanceID: 5056}
     - Class: 114
-      Script: {instanceID: 5482}
+      Script: {instanceID: 5492}
     - Class: 114
-      Script: {instanceID: 5746}
+      Script: {instanceID: 5756}
     - Class: 114
-      Script: {instanceID: 6062}
+      Script: {instanceID: 6072}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -411,7 +431,7 @@ ScriptsOnlyBuild:
     className: UnityOnJointBreakMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 34fa62d1adcef73392565d01e34433da
+      Hash: 1fbcdbb212fc8603eb34d7bea103b1a8
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Configuration
@@ -421,6 +441,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: dfd613104d20ac1d22ec3d6c26bc6146
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Target
+  - hash:
+      serializedVersion: 2
+      Hash: fe01508152204a9becd92bbceade89fa
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Simulation
   - hash:
       serializedVersion: 2
       Hash: 1321993db8249e1e05e1e0492b2bbdc3
@@ -495,6 +527,12 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
+      Hash: a926d3b1c1013d55483f8811c132085f
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: target3D
+  - hash:
+      serializedVersion: 2
       Hash: 3b5263a98bcc71d9a9d1d78a31b34ced
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
@@ -567,7 +605,7 @@ ScriptsOnlyBuild:
     className: UnityOnMouseDownMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 97e1694ca1ab9f122e5a5f5450d0642d
+      Hash: 3935fc8e12bb9831ee96f11c58cfde03
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: code
@@ -811,6 +849,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnPointerClickMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: dfdd46d2f85f6dc0f2e494cfae3c0a64
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: cannonPos
   - hash:
       serializedVersion: 2
       Hash: aa349b22cd61b9e8488d736f82590d6b

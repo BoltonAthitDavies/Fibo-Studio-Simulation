@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class code : MonoBehaviour
@@ -24,6 +25,7 @@ public class code : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        frontcam();
         //frontcam();
         //if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.Mouse2))
         if (Input.GetKey(KeyCode.Mouse0))
@@ -54,10 +56,11 @@ public class code : MonoBehaviour
 
     private void frontcam()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            fcam = new Vector3(-10.5f, 7.5f, -2.5f);
-            transform.position = fcam;
+            SceneManager.LoadScene("Configuration");
+            //fcam = new Vector3(-10.5f, 7.5f, -2.5f);
+            //transform.position = fcam;
             //transform.Rotate(Vector3.up, 90.0f);
         }
     }
